@@ -8,7 +8,7 @@ public class PasteMethodsToRobot {
 	//drive.followerRightOne.getEncPosition() is the encoder ticks on the right side of the robot the right side of our robot ticked backwards so it is negated if your robot doesnt do that then dont have this value negated
 	//gyro.getYaw() angle of the robot from -180 to 180
 	//in the line "myDrive.arcadeDrive(-speed, -((gyro.getYaw() - angleToDrive) /360*8),true);" the * 8 is a tuning value increase this value if it paths wide decrease this value if it goes spastic or narrow
-	
+	//gotStartingENCClicks needs to be a global variable started at false
 	public boolean spline(double speed, RobotGrid spline) {
     	if (gotStartingENCClicks == false) {
 			gotStartingENCClicks = true;
