@@ -1,6 +1,8 @@
 import org.usfirst.frc.team20.robot.AutoConstants;
 import org.usfirst.frc.team20.robot.RobotGrid;
 
+import edu.wpi.first.wpilibj.RobotDrive;
+
 public class PasteMethodsToRobot {
 	//if you couldn't tell by the name paste this method into robot.java
 	//drive.masterLeft.getEncPosition() is the encoder ticks on the left side of the robot
@@ -9,7 +11,7 @@ public class PasteMethodsToRobot {
 	//gyro.getYaw() angle of the robot from -180 to 180
 	//in the line "myDrive.arcadeDrive(-speed, -((gyro.getYaw() - angleToDrive) /360*8),true);" the * 8 is a tuning value increase this value if it paths wide decrease this value if it goes spastic or narrow
 	//gotStartingENCClicks needs to be a global variable started at false
-	
+	//myDrive is the robotDrive class
 	public boolean spline(double speed, RobotGrid spline) {
     	int startingENCClicksLeft;
     	int startingENCClicksRight;
