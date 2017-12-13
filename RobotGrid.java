@@ -7,15 +7,15 @@ public class RobotGrid {
     private ArrayList<Position> path;
     private double precision;
 //NO ARCS OVER 90 DEGREES
-    public RobotGrid(double x, double y, double angle, double p) {//precsionis in points per degree
+    public RobotGrid(double x, double y, double angle, double precision) {//precsionis in points per degree
         path = new ArrayList<Position>();
         path.add(new Position(x, y, angle));
-        precision = p;
+        this.precision = precision;
     }
-    public RobotGrid(double x, double y, double angle, double p, double distance){
+    public RobotGrid(double x, double y, double angle, double precision, double distance){
     	path = new ArrayList<Position>();
         path.add(new Position(x, y, angle, distance));
-        precision = p;
+        this.precision = precision;
     }
     //NO ARCS OVER 90 DEGREES
     public void addLinearPoint(double x, double y, double angle) {//when initalizing x and y do not matter it is just a way to set the zero of the field and that zero can be wherever you want it to be
