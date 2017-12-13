@@ -8,3 +8,10 @@ this method has 3 perameters the first being a x cordinate which is its target x
 if you want to path an arc you use the addPoint method this method also has 3 parameters the first two are the same as the addLinearPoint the last on is angle which is the angle you want he robot to end at
 the getAngle method is to get the angle to robot is supposed to be heading it has one perameter which is distance which is the average between the distance traveled by both sides of the robot
 the getReverseAngle method behaves the same and has the same perameters as the getAngle method but is the robots heading for following backwards
+the getDistance method returns the total distance needed to be pathed by the spline
+
+the Spline method is the drive method and should be in robot.java (read the comments above the meathod for proper implementation)
+the first perameter is the speed you want the robot fpr -1 to 1 if the speed is negative the spline will be pathed backwords
+the second perameter is the spline you want to path
+
+the position class is called by the robot grid class it is that classes primary way of storing information
