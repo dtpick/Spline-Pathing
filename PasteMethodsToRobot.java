@@ -20,7 +20,7 @@ public class PasteMethodsToRobot {
 			startingENCClicksLeft = drive.masterLeft.getEncPosition();
 			startingENCClicksRight = -drive.followerRightOne.getEncPosition();
 		}
-		if (spline.getDistance() <= (((drive.masterLeft.getEncPosition() - startingENCClicksLeft)/ AutoConstants.TICKS_PER_INCH + (-drive.followerRightOne.getEncPosition() - startingENCClicksRight)/ AutoConstants.TICKS_PER_INCH))/2) {
+		if (spline.getDistance() <= (((drive.masterLeft.getEncPosition() - startingENCClicksLeft)/ AutoConstants.TICKS_PER_INCH + (-drive.followerRightOne.getEncPosition() - startingENCClicksRight)/ AutoConstants.TICKS_PER_INCH))/2 || (drive.masterRight.getOutputCurrentt() > 30 && (((drive.masterLeft.getEncPosition() - startingENCClicksLeft)/ AutoConstants.TICKS_PER_INCH + (-drive.followerRightOne.getEncPosition() - startingENCClicksRight)/ AutoConstants.TICKS_PER_INCH))/2 > .5*spline.getDistance())) {
 			drive.masterLeft.set(0.00);
 			drive.masterRight.set(0.00);
 			System.out.println("Final NavX Angle: " + gyro.getYaw());
