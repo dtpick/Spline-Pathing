@@ -30,6 +30,8 @@ public class PasteMethodsToRobot {
 			return true;
 		} else {
 			double angleToDrive;
+			if (spline.getDistance()-((drive.masterLeft.getEncPosition() - startingENCClicksLeft)/ AutoConstants.TICKS_PER_INCH + (-drive.followerRightOne.getEncPosition() - startingENCClicksRight)/ AutoConstants.TICKS_PER_INCH))/2) <(20*speed))
+				speed *= spline.getDistance()-((drive.masterLeft.getEncPosition() - startingENCClicksLeft)/ AutoConstants.TICKS_PER_INCH + (-drive.followerRightOne.getEncPosition() - startingENCClicksRight)/ AutoConstants.TICKS_PER_INCH))/2)/(20*speed);
 			if (speed > 0)
 				angleToDrive = (spline.getAngle(Math.abs(((drive.masterLeft.getEncPosition() - startingENCClicksLeft)/ AutoConstants.TICKS_PER_INCH + (-drive.followerRightOne.getEncPosition() - startingENCClicksRight)/ AutoConstants.TICKS_PER_INCH))/2));
 			else
